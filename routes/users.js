@@ -1,6 +1,6 @@
 const Router = require('express').Router;
 const User = require('../models/user');
-const {ensureLoggedIn, ensureCorrectUser} = require('../middleware/auth');
+const {ensureCorrectUser} = require('../middleware/auth');
 
 const router = new Router()
 
@@ -10,7 +10,7 @@ const router = new Router()
  *
  **/
 
-router.get('/', ensureLoggedIn, async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         let users = await User.all();
         return res.json({users})
