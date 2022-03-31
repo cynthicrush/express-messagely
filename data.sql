@@ -1,5 +1,7 @@
-DROP TABLE IF EXISTS users;
+\c messagely
+
 DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     username text PRIMARY KEY,
@@ -19,3 +21,13 @@ CREATE TABLE messages (
     sent_at timestamp with time zone NOT NULL,
     read_at timestamp with time zone
 );
+
+-- INSERT INTO users
+-- VALUES ('Cynthicrush', '9788667268', 'Cynthia', 'Canada', '9788667268', 'now', 'now');
+-- {
+-- 	"username": "Jen",
+-- 	"password": "9299906668",
+-- 	"first_name": "Jennifer",
+-- 	"last_name": "Canada",
+-- 	"phone": "9299906668"
+-- }
